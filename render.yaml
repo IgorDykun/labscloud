@@ -1,0 +1,4 @@
+runtime: java
+build:
+  path: .
+start: java -jar GameServiceApplication.jar
