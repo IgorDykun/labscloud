@@ -13,5 +13,7 @@ RUN chmod +x mvnw
 # Збираємо проєкт за допомогою Maven Wrapper
 RUN ./mvnw clean package
 
+EXPOSE 8080
+
 # Вказуємо команду для запуску додатку
 CMD ["java", "-jar", "target/game-service-0.0.1-SNAPSHOT.jar"]
