@@ -1,7 +1,6 @@
 package com.example.game.game_service.dto;
 
 import lombok.*;
-
 import jakarta.validation.constraints.*;
 import java.util.List;
 import com.example.game.game_service.validation.ValidReleaseYear;
@@ -17,7 +16,7 @@ public class GameDTO {
     private String title;
 
     @NotBlank(message = "Genre cannot be empty")
-    @Pattern(regexp = "^[A-Za-z]+$", message = "Genre can only contain alphabetic characters")
+    @Pattern(regexp = "^[A-Za-z ]+$", message = "Genre can only contain alphabetic characters and spaces")
     private String genre;
 
     @NotBlank(message = "Developer cannot be empty")
@@ -28,7 +27,6 @@ public class GameDTO {
     @Min(value = 1900, message = "Release year must be greater than 1900")
     private int releaseYear;
 
-    @NotNull(message = "Player IDs cannot be null")
-    @Size(min = 1, message = "There must be at least one player ID")
-    private List<String> playerIds;
+    private List<String> playerIds;  // зберігаємо playerIds
 }
+

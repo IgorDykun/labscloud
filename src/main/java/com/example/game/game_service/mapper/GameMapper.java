@@ -16,8 +16,9 @@ public class GameMapper {
     @Autowired
     private PlayerRepository playerRepository;
 
+
     public GameDTO toDTO(Game game) {
-        List<String> playerIds = game.getPlayers().stream()
+        List<String> playerIds = game.getPlayerIds().stream()
                 .map(Player::getId)
                 .collect(Collectors.toList());
 
@@ -31,6 +32,7 @@ public class GameMapper {
         );
     }
 
+
     public Game toModel(GameDTO gameDTO) {
         List<Player> players = playerRepository.findAllById(gameDTO.getPlayerIds());
 
@@ -43,3 +45,4 @@ public class GameMapper {
         );
     }
 }
+

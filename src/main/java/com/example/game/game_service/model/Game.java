@@ -15,14 +15,14 @@ public class Game {
     private int releaseYear;
 
     @DBRef
-    private List<Player> players;
+    private List<Player> playerIds;
 
-    public Game(String title, String genre, String developer, int releaseYear, List<Player> players) {
+    public Game(String title, String genre, String developer, int releaseYear, List<Player> playerIds) {
         this.title = title;
         this.genre = genre;
         this.developer = developer;
         this.releaseYear = releaseYear;
-        this.players = players;
+        this.playerIds = playerIds;
     }
 
     public String getId() {
@@ -65,11 +65,11 @@ public class Game {
         this.releaseYear = releaseYear;
     }
 
-    public List<Player> getPlayers() {
-        return players;
+    public List<Player> getPlayerIds() {
+        return playerIds;
     }
 
-    public void setPlayers(List<Player> players) {
-        this.players = players;
+    public void setPlayerIds(List<Player> playerIds) {
+        this.playerIds = playerIds;
     }
 }
